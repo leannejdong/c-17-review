@@ -7,7 +7,8 @@ using std::chrono::system_clock;
 #include <iostream>
 #include <list>
 #include <vector>
-#include <random>
+//#include <random>
+#include "../util.h"
 using std::list;
 using std::vector;
 
@@ -15,19 +16,14 @@ using std::vector;
 void BuildVector(const int &size, vector<int> &v);
 void BuildList(const int &size, list<int> &l);
 
-template <typename Func> long long TimeFunc(Func f) {
-  auto begin = steady_clock::now();
-  f();
-  auto end = steady_clock::now();
 
-  return duration_cast<milliseconds>(end - begin).count();
-}
+// template <typename Func> long long Timer(Func f) {
+//   auto begin = steady_clock::now();
+//   f();
+//   auto end = steady_clock::now();
 
-int rand11() {
-  static std::mt19937 engine;
-  static std::uniform_int_distribution<int> dist;
-  return dist(engine);
-}
+//   return duration_cast<milliseconds>(end - begin).count();
+// }
 
 void BuildVector(const int &size, vector<int> &v) {
   for (int i = 0; i < size; i++) {
@@ -71,8 +67,8 @@ int main() {
   list<int> l;
   l.push_back(0);
 
-  auto vectormilliseconds = TimeFunc([&]() { BuildVector(size, v); });
-  auto listmilliseconds = TimeFunc([&]() { BuildList(size, l); });
+  auto vectormilliseconds = Timer([&]() { BuildVector(size, v); });
+  auto listmilliseconds = Timer([&]() { BuildList(size, l); });
   std::cout << vectormilliseconds << std::endl;
   std::cout << listmilliseconds << std::endl;
 }

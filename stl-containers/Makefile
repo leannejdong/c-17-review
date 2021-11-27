@@ -1,2 +1,2 @@
 all:
-	clang++ -std=c++11 -Wall -Wextra -Wpedantic -Werror main.cpp Resource.cpp -o container
+	g++ -std=c++11 -Wall -Wextra -Wpedantic listvec.cpp Resource.cpp -o container

@@ -28,4 +28,9 @@ std::forward has a single use case: to cast a templated function parameter (insi
 
 [Difference between `std::move` vs `std::forward`](https://compiler-explorer.com/z/jPxvEefTr)
 
-ref: https://isocpp.org/blog/2018/02/quick-q-whats-the-difference-between-stdmove-and-stdforward
+ref: 
+
+* [isocpp](https://isocpp.org/blog/2018/02/quick-q-whats-the-difference-between-stdmove-and-stdforward)
+
+* [Understanding lvalues and rvalues in C and C++](https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c/)
+
